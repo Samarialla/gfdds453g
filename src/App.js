@@ -12,8 +12,16 @@ export class App extends Component {
       <div>
         <nav>
           {/*Aca deben ir los links de navegacion*/}
+          <Link to='/page1'>Page1</Link>
+          <Link to='/page2'>Page2</Link>
         </nav>
         {/* Aca tienes que agreager algo para que las rutas funcionen*/}
+        <Switch>
+          <Route path="/page1" component={Page1} />
+           <Redirect exact from="/" to="page1" />
+          <Route path="/page2" component={Page2} />
+          <Route path="*" component={NotFound} />
+        </Switch>
       </div>
     )
   }
